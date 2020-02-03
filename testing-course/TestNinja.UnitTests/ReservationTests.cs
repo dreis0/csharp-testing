@@ -1,5 +1,5 @@
-using TestNinja.Fundamentals;
 using NUnit.Framework;
+using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
