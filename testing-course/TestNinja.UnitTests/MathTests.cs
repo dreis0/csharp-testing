@@ -32,12 +32,37 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        public void GetOddNumbers_LimitGreateThen0_ReturnsOddNumber()
+        public void GetOddNumbers_LimitGreaterThen0_ReturnsOddNumbers()
         {
             var result = _math.GetOddNumbers(5);
 
             //Most general
             Assert.That(result, Is.Not.Empty);
+
+            //Specific
+            Assert.That(((int[])result).Length, Is.EqualTo(3));
+
+            //Most specific
+            Assert.That(result, Does.Contain(1));
+            Assert.That(result, Does.Contain(3));
+            Assert.That(result, Does.Contain(5));
+
+            //Or
+            Assert.That(result, Is.EquivalentTo(new[] { 1, 3, 5 }));
+        }
+
+        [Test]
+        public void GetOddNumbers_LimitIs0_ReturnsEmpty()
+        {
+            var result = _math.GetOddNumbers(0);
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        public void GetOddNumbers_LimitIsLessThen0_ThrowsException()
+        {
+            var result = _math.GetOddNumbers(-1);
+            Assert.That(result, Is.Empty);
         }
     }
 }
