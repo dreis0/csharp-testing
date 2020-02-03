@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
@@ -23,6 +24,19 @@ namespace TestNinja.UnitTests
             _logger.Log("test");
 
             Assert.That(_logger.LastError, Is.EqualTo(testString));
+        }
+
+        /* Testing exception throwing */
+
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void Log_InvalidError_ThrowsArgumentNullException(string error)
+        {
+            Assert.That(() => _logger.Log(error), Throws.ArgumentNullException);
+            //For exceptions that are not a property in "Throws" use:
+            Assert.That(() => _logger.Log(error), Throws.Exception.TypeOf<ArgumentNullException>());
         }
     }
 }
