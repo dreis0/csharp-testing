@@ -31,6 +31,8 @@ namespace TestNinja.UnitTests
             Assert.AreEqual(result, expectedValue);
         }
 
+        /* Using general and specific assertions */
+
         [Test]
         public void GetOddNumbers_LimitGreaterThen0_ReturnsOddNumbers()
         {

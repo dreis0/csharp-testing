@@ -13,6 +13,9 @@ namespace TestNinja.UnitTests
         {
             _formatter = new HtmlFormatter();
         }
+
+        /* Testing string type methods */
+
         public void FormatAsBold_WhenCalled_EncloseTheStringWithStrongElement()
         {
             string testString = "test";
