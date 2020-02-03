@@ -21,7 +21,6 @@ namespace TestNinja.UnitTests
             Assert.AreEqual(result, 3);
         }
 
-
         [Test]
         [TestCase(1, 2, 2)]
         [TestCase(2, 1, 2)]
@@ -30,6 +29,15 @@ namespace TestNinja.UnitTests
         {
             var result = _math.Max(a, b);
             Assert.AreEqual(result, expectedValue);
+        }
+
+        [Test]
+        public void GetOddNumbers_LimitGreateThen0_ReturnsOddNumber()
+        {
+            var result = _math.GetOddNumbers(5);
+
+            //Most general
+            Assert.That(result, Is.Not.Empty);
         }
     }
 }
