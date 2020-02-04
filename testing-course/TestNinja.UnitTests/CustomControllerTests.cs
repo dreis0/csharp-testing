@@ -29,7 +29,7 @@ namespace TestNinja.UnitTests
         [Test]
         public void GetCustomer_IdIsNotZero_ReturnsOk()
         {
-            var result = _controller.GetCustomer(0);
+            var result = _controller.GetCustomer(1);
             Assert.That(result, Is.TypeOf<Ok>());
         }
     }

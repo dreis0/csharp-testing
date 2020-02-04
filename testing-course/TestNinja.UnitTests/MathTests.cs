@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
@@ -40,9 +41,6 @@ namespace TestNinja.UnitTests
 
             //Most general
             Assert.That(result, Is.Not.Empty);
-
-            //Specific
-            Assert.That(((int[])result).Length, Is.EqualTo(3));
 
             //Most specific
             Assert.That(result, Does.Contain(1));
