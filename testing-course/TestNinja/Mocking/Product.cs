@@ -4,7 +4,7 @@
     {
         public float ListPrice { get; set; }
 
-        public float GetPrice(ICustomer customer)
+        public float GetPrice(Customer customer)
         {
             if (customer.IsGold)
                 return ListPrice * 0.7f;
@@ -13,12 +13,7 @@
         }
     }
 
-    public interface ICustomer
-    {
-        bool IsGold { get; set; }
-    }
-
-    public class Customer : ICustomer
+    public class Customer
     {
         public bool IsGold { get; set; }
     }
