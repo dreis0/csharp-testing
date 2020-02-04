@@ -35,7 +35,7 @@ namespace TestNinja.UnitTests
         public void Log_InvalidError_ThrowsArgumentNullException(string error)
         {
             Assert.That(() => _logger.Log(error), Throws.ArgumentNullException);
-            //For exceptions that are not a property in "Throws" use:
+            //For exceptions that are not a property of "Throws", use:
             Assert.That(() => _logger.Log(error), Throws.Exception.TypeOf<ArgumentNullException>());
         }
 
