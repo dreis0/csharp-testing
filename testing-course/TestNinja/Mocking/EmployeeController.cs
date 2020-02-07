@@ -28,15 +28,6 @@ namespace TestNinja.Mocking
 
     public class RedirectResult : ActionResult { }
 
-    public class EmployeeContext : IEmployeeContext
-    {
-        public DbSet<Employee> Employees { get; set; }
-
-        public void SaveChanges()
-        {
-        }
-    }
-
     public class Employee
     {
     }
