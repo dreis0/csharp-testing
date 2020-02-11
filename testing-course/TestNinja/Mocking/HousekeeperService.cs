@@ -8,7 +8,7 @@ using System.Text;
 
 namespace TestNinja.Mocking
 {
-    public static class HousekeeperHelper
+    public static class HousekeeperService
     {
         public static bool SendStatementEmails(
             DateTime statementDate, 
@@ -44,8 +44,10 @@ namespace TestNinja.Mocking
                 }
                 catch (Exception e)
                 {
-                    XtraMessageBox.Show(e.Message, string.Format("Email failure: {0}", emailAddress),
+                    messager.Show(e.Message, string.Format("Email failure: {0}", emailAddress),
                         MessageBoxButtons.OK);
+
+                    return false;
                 }
             }
 
